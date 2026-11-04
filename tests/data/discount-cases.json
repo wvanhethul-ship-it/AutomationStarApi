@@ -1,0 +1,31 @@
+[
+  {
+    "title": "cash partition applies a 10% discount",
+    "partition": "valid cash payment",
+    "paymentMethod": "cash",
+    "items": [{ "productId": "product-3", "quantity": 1 }],
+    "expectedStatus": 201,
+    "expectedSubtotal": 9.99,
+    "expectedDiscount": 1,
+    "expectedTotal": 8.99
+  },
+  {
+    "title": "credit-card partition applies no discount",
+    "partition": "valid credit-card payment",
+    "paymentMethod": "credit_card",
+    "items": [{ "productId": "product-2", "quantity": 1 }],
+    "expectedStatus": 201,
+    "expectedSubtotal": 18.99,
+    "expectedDiscount": 0,
+    "expectedTotal": 18.99,
+    "requiresSavedCard": true
+  },
+  {
+    "title": "unsupported-method partition is rejected",
+    "partition": "invalid payment method",
+    "paymentMethod": "crypto",
+    "items": [{ "productId": "product-1", "quantity": 1 }],
+    "expectedStatus": 400,
+    "expectedError": "paymentMethod"
+  }
+]

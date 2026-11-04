@@ -1,0 +1,62 @@
+## Prompt 1: Create the e-commerce checkout REST API
+
+Goal:
+
+Create an e-commerce checkout REST API using JavaScript.
+
+Context:
+
+- The API has four endpoints: Login, Register, Card, and Checkout.
+- The checkout business rule is: cash payments receive a 10% discount; credit card payments receive no discount.
+- Build the API using Express.
+
+Rules:
+
+- Use in-memory storage, keeping the data in variables.
+- Create an OpenAPI specification in YAML and an endpoint that serves the YAML file.
+- Create a README file.
+- Add three products and three users to the in-memory data.
+- Do not create test automation for this API.
+- Use Git for version control and create a pull request.
+- Add an endpoint that serves Swagger UI for the OpenAPI YAML specification.
+
+## Prompt 2: Test the discount rule using equivalence partitioning
+
+Goal:
+
+Test the discount business rule using equivalence partitioning.
+
+Context:
+
+- The API specification is in `openapi.yaml`.
+- The discount rule and existing test data are in `README.md`.
+- Equivalence partitioning identifies classes of inputs that are expected to behave alike. Select a representative input from each class.
+
+Rules:
+
+- Use equivalence partitioning only; do not use any other test design technique.
+- Execute the tests against the API.
+- Record evidence for both successful responses and expected failures.
+- Generate an HTML report containing the findings.
+
+## Prompt 3: Automate the API tests with Mocha, SuperTest, and Chai
+
+Goal:
+
+Create API test automation using Mocha, SuperTest, and Chai.
+
+Context:
+
+- Automate the same discount-rule tests described in Prompt 2.
+- Use the same test data as the existing discount tests.
+
+Rules:
+
+- Store the test automation scripts in a `tests` folder.
+- Organize the tests by module. For example, put tests that validate checkout responses in a `checkout` module.
+- Create reusable helper functions for common operations, such as `login()`.
+- Use data-driven testing and store test data in external files.
+- Store secrets and constant URLs in a `.env` file, using the `dotenv` library.
+- Use Mochawesome to generate HTML test reports.
+- Run the tests and verify that they work correctly.
+- Use Git to version the changes and create a pull request.
